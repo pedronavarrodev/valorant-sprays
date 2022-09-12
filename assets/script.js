@@ -12,23 +12,19 @@ function criaLinha(displayName) {
     
 }
 
-// function main() {
-//     data = fazGet(`https://valorant-api.com/v1/weapons/skins/`)
-//     displayName = JSON.parse(data)
-//     console.log(displayName[0])
-// }
-
 function main() {
     data = fazGet(`https://valorant-api.com/v1/sprays`)
     fullIcon = JSON.parse(data)
     console.log(fullIcon.data[3].fullIcon)
 }
-main()
 
+main()
 
 addEventListener('click', function() {
     let sprayAleatorio = Math.floor(Math.random() * 339)
     let sprays = document.querySelector('#spray')
     
+    //Troca no HTML
     sprays.setAttribute('src', `${fullIcon.data[sprayAleatorio].fullIcon}`); 
+   
 })
